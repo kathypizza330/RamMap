@@ -1,0 +1,78 @@
+{
+  "Building":[
+    {
+      "name": "Lory Student Center",
+      "latitude": 40.574753,
+      "longitude": -105.084686,
+      "altitude":1526
+    },
+    {
+      "name": "Clark A",
+      "latitude": 40.573287,
+      "longitude": -105.083235,
+      "altitude":1526
+    },
+    {
+      "name": "Morgan Library",
+      "latitude": 40.572945,
+      "longitude": -105.084437,
+      "altitude":1526
+    },
+    {
+      "name": "Plant Science",
+      "latitude": 40.573116,
+      "longitude": -105.082280,
+      "altitude":1526
+    },
+    {
+      "name": "Animal Science",
+      "latitude": 40.572203,
+      "longitude": -105.082023,
+      "altitude":1526
+    },
+    {
+      "name": "Behavior Science Building",
+      "latitude": 40.571502,
+      "longitude": -105.083289,
+      "altitude":1526
+    },
+    {
+      "name": "Eddy Hall",
+      "latitude": 40.572154,
+      "longitude": -105.084029,
+      "altitude":1526
+    },
+    {
+      "name": "Education Building",
+      "latitude": 40.571502,
+      "longitude": -105.084222,
+      "altitude":1526
+    },
+    {
+      "name": "Braiden Hall",
+      "latitude": 40.571665,
+      "longitude": -105.085574,
+      "altitude":1526
+    },
+    {
+      "name": "Chemistry",
+      "latitude": 40.570154,
+      "longitude": -105.084203,
+      "altitude":1526
+    },
+  ],
+  "food":[
+    {
+      "name": "Morgan Grind",
+      "latitude": 40.572945,
+      "longitude": -105.084437,
+      "altitude":1526
+    },
+    {
+      "name": "Lory Student Center Food Court",
+      "latitude": 40.574753,
+      "longitude": -105.084686,
+      "altitude":1526
+    },
+  ]
+}
