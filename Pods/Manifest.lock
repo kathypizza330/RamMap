@@ -1,0 +1,27 @@
+PODS:
+  - CocoaLumberjack/Default (3.3.0)
+  - CocoaLumberjack/Swift (3.3.0):
+    - CocoaLumberjack/Default
+  - SwiftyJSON (3.1.4)
+
+DEPENDENCIES:
+  - CocoaLumberjack/Swift (from `https://github.com/CocoaLumberjack/CocoaLumberjack`, branch `master`)
+  - SwiftyJSON
+
+EXTERNAL SOURCES:
+  CocoaLumberjack:
+    :branch: master
+    :git: https://github.com/CocoaLumberjack/CocoaLumberjack
+
+CHECKOUT OPTIONS:
+  CocoaLumberjack:
+    :commit: af58d6f666de0e0783625f75f13b0a4757f256fe
+    :git: https://github.com/CocoaLumberjack/CocoaLumberjack
+
+SPEC CHECKSUMS:
+  CocoaLumberjack: eadb54b41bba07d02c55a0bc634297328c7257ba
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+
+PODFILE CHECKSUM: 6d8305c52b5af7fe2266a47e70dd54310b3b1492
+
+COCOAPODS: 1.2.0
