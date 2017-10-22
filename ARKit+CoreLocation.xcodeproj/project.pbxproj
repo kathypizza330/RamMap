@@ -23,7 +23,7 @@
 		71B6A9EDA814C7F42DF123D9 /* Pods_ARKit_CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C10523EF85AA6B7CDF962AD /* Pods_ARKit_CoreLocation.framework */; };
 		BDE9AF2F1F9C29F2006D0986 /* buttonAnimationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE9AF2E1F9C29F2006D0986 /* buttonAnimationExtension.swift */; };
 		D8C205D11F5B197200675E6E /* NotSupportedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C205D01F5B197200675E6E /* NotSupportedViewController.swift */; };
-		DB1B2A051F9B611D00183EE3 /* location.json in Resources */ = {isa = PBXBuildFile; fileRef = DB1B2A041F9B611D00183EE3 /* location.json */; };
+		DB06A9F81F9C04F8007EEF2C /* location.json in Resources */ = {isa = PBXBuildFile; fileRef = DB06A9F71F9C04F8007EEF2C /* location.json */; };
 		DB1B2A061F9B6B5E00183EE3 /* LocationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A3FBFE1F09B1D200AA59C8 /* LocationNode.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,7 +49,7 @@
 		A967016A4C9D5DA8BF8AE438 /* Pods-ARKit+CoreLocation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARKit+CoreLocation.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARKit+CoreLocation/Pods-ARKit+CoreLocation.release.xcconfig"; sourceTree = "<group>"; };
 		BDE9AF2E1F9C29F2006D0986 /* buttonAnimationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buttonAnimationExtension.swift; sourceTree = "<group>"; };
 		D8C205D01F5B197200675E6E /* NotSupportedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotSupportedViewController.swift; sourceTree = "<group>"; };
-		DB1B2A041F9B611D00183EE3 /* location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = location.json; path = ../../../location.json; sourceTree = "<group>"; };
+		DB06A9F71F9C04F8007EEF2C /* location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = location.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +99,7 @@
 		49A3FBF31F099A4A00AA59C8 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				DB1B2A041F9B611D00183EE3 /* location.json */,
+				DB06A9F71F9C04F8007EEF2C /* location.json */,
 				49A3FBF61F099C8100AA59C8 /* SceneLocationView.swift */,
 				49A3FBFE1F09B1D200AA59C8 /* LocationNode.swift */,
 				49A3FC001F09B9CF00AA59C8 /* SceneLocationEstimate.swift */,
@@ -194,7 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49A3FBE81F09988100AA59C8 /* LaunchScreen.storyboard in Resources */,
-				DB1B2A051F9B611D00183EE3 /* location.json in Resources */,
+				DB06A9F81F9C04F8007EEF2C /* location.json in Resources */,
 				49A3FBE51F09988100AA59C8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,10 +403,10 @@
 			baseConfigurationReference = 38104A8494954E9B79241EAE /* Pods-ARKit+CoreLocation.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = PBM6TWS6CB;
+				DEVELOPMENT_TEAM = 56C44F43JR;
 				INFOPLIST_FILE = "ARKit+CoreLocation/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = xiwei26;
+				PRODUCT_BUNDLE_IDENTIFIER = RamMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -418,10 +418,10 @@
 			baseConfigurationReference = A967016A4C9D5DA8BF8AE438 /* Pods-ARKit+CoreLocation.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = PBM6TWS6CB;
+				DEVELOPMENT_TEAM = 56C44F43JR;
 				INFOPLIST_FILE = "ARKit+CoreLocation/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = xiwei26;
+				PRODUCT_BUNDLE_IDENTIFIER = RamMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

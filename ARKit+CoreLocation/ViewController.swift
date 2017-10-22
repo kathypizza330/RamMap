@@ -40,7 +40,7 @@ class ViewController: UIViewController, MKMapViewDelegate, SceneLocationViewDele
     ///Whether to display some debugging data
     ///This currently displays the coordinate of the best location estimate
     ///The initial value is respected
-    var displayDebugging = true
+    var displayDebugging = false
     
     var infoLabel = UILabel()
     
