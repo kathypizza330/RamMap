@@ -459,15 +459,17 @@ public class SceneLocationView: ARSCNView, ARSCNViewDelegate {
             locationNode.scale = SCNVector3(x: 1, y: 1, z: 1)
 
             var scale: Float
+            var letter: SCNText
 
             if annotationNode.scaleRelativeToDistance {
                 scale = appliedScale.y
-                annotationNode.textNode.geometry = SCNText(string: annotationNode.textNode.name! + " " + String(distance), extrusionDepth:0.0)
-                let textScale = Float((distance)/250)
+                letter = SCNText(string: " " + annotationNode.textNode.name! + "\n     " + String(format: "%.f", distance) + " m", extrusionDepth:0.0)
+                letter.font = UIFont (name: "Palatino-Bold", size: 10)
+                annotationNode.textNode.geometry = letter
+                let textScale = Float(distance)/250
                 annotationNode.annotationNode.scale = SCNVector3(x: appliedScale.x * 10, y: appliedScale.y * 10, z: appliedScale.z * 10)
-                
                 annotationNode.textNode.scale = SCNVector3(x: textScale, y: textScale, z: textScale)
-                
+
 
             } else {
                 //Scale it to be an appropriate size so that it can be seen
