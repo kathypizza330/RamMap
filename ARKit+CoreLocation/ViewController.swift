@@ -15,13 +15,13 @@ import SwiftyJSON
 @available(iOS 11.0, *)
 class ViewController: UIViewController, MKMapViewDelegate, SceneLocationViewDelegate {
 
-    
-
-    
     let sceneLocationView = SceneLocationView()
 
     // add a button
     let button = UIButton(frame: CGRect(x:250, y:50, width:120, height:50))
+    
+    // add a map button
+    let mapButton = UIButton(frame: CGRect(x:30, y:50, width:50, height:50))
   
     
     let mapView = MKMapView()
@@ -55,7 +55,7 @@ class ViewController: UIViewController, MKMapViewDelegate, SceneLocationViewDele
         infoLabel.textAlignment = .left
         infoLabel.textColor = UIColor.white
         infoLabel.numberOfLines = 0
-        sceneLocationView.addSubview(infoLabel)
+        //sceneLocationView.addSubview(infoLabel)
         
         updateInfoLabelTimer = Timer.scheduledTimer(
             timeInterval: 0.1,
@@ -107,19 +107,27 @@ class ViewController: UIViewController, MKMapViewDelegate, SceneLocationViewDele
                 print("parse error: \(error.localizedDescription)")
             }
         } else {
+            
             print("Invalid filename/path.")
         }
         
-        // setup button
-        button.backgroundColor = UIColor(red: 192/255.0, green: 192/255.0, blue: 192/255.0, alpha: 0.5)
+        // setup filter button
+        button.backgroundColor = UIColor(red: 192/255.0, green: 192/255.0, blue: 192/255.0, alpha: 0.8)
         button.setTitle("Filter",for: .normal)
         button.addTarget(self, action:#selector(buttonAction(sender:)), for: .touchUpInside)
         button.layer.cornerRadius = 4
+        
+        // setup map button
+        mapButton.setImage(UIImage(named: "map.png"), for: .normal)
+
+        mapButton.addTarget(self, action:#selector(mapButtonAction(sender:)), for: .touchUpInside)
+
         
         
         
         view.addSubview(sceneLocationView)
         view.addSubview(button)
+        view.addSubview(mapButton)
         
     
         
@@ -176,6 +184,30 @@ class ViewController: UIViewController, MKMapViewDelegate, SceneLocationViewDele
         
         // present the action sheet
         self.present(myActionSheet, animated: true, completion: nil)
+    }
+    
+    @objc func mapButtonAction(sender: UIButton!) {
+        print("Button tapped")
+        mapButton.pulsate()
+        if showMapView{
+            showMapView = false
+            mapView.removeFromSuperview()
+        } else {
+            showMapView = true
+                mapView.delegate = self
+                mapView.showsUserLocation = true
+                mapView.alpha = 0.8
+                view.addSubview(mapView)
+                
+                updateUserLocationTimer = Timer.scheduledTimer(
+                    timeInterval: 0.5,
+                    target: self,
+                    selector: #selector(ViewController.updateUserLocation),
+                    userInfo: nil,
+                    repeats: true)
+            
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -300,34 +332,34 @@ class ViewController: UIViewController, MKMapViewDelegate, SceneLocationViewDele
         }
     }
     
-    //    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    //        super.touchesBegan(touches, with: event)
-    //
-    //        if let touch = touches.first {
-    //            if touch.view != nil {
-    //                if (mapView == touch.view! ||
-    //                    mapView.recursiveSubviews().contains(touch.view!)) {
-    //                    centerMapOnUserLocation = false
-    //                } else {
-    //
-    //                    let location = touch.location(in: self.view)
-    //
-    //                    if location.x <= 40 && adjustNorthByTappingSidesOfScreen {
-    //                        print("left side of the screen")
-    //                        sceneLocationView.moveSceneHeadingAntiClockwise()
-    //                    } else if location.x >= view.frame.size.width - 40 && adjustNorthByTappingSidesOfScreen {
-    //                        print("right side of the screen")
-    //                        sceneLocationView.moveSceneHeadingClockwise()
-    //                    } else {
-    //                        let image = UIImage(named: "pin")!
-    //                        let annotationNode = LocationAnnotationNode(location: nil, image: image, name)
-    //                        annotationNode.scaleRelativeToDistance = true
-    //                        sceneLocationView.addLocationNodeForCurrentPosition(locationNode: annotationNode)
-    //                    }
-    //                }
-    //            }
-    //        }
-    //    }
+        override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            super.touchesBegan(touches, with: event)
+    
+            if let touch = touches.first {
+                if touch.view != nil {
+                    if (mapView == touch.view! ||
+                        mapView.recursiveSubviews().contains(touch.view!)) {
+                        centerMapOnUserLocation = false
+                    } else {
+    
+                        let location = touch.location(in: self.view)
+    
+                        if location.x <= 40 && adjustNorthByTappingSidesOfScreen {
+                            print("left side of the screen")
+                            sceneLocationView.moveSceneHeadingAntiClockwise()
+                        } else if location.x >= view.frame.size.width - 40 && adjustNorthByTappingSidesOfScreen {
+                            print("right side of the screen")
+                            sceneLocationView.moveSceneHeadingClockwise()
+                        } else {
+//                            let image = UIImage(named: "pin")!
+//                            let annotationNode = LocationAnnotationNode(location: nil, image: image, name)
+//                            annotationNode.scaleRelativeToDistance = true
+//                            sceneLocationView.addLocationNodeForCurrentPosition(locationNode: annotationNode)
+                        }
+                    }
+                }
+            }
+        }
     
     //MARK: MKMapViewDelegate
     
