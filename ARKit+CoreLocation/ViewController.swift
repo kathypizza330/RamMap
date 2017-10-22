@@ -11,13 +11,19 @@ import SceneKit
 import MapKit
 import CocoaLumberjack
 import SwiftyJSON
+import YNDropDownMenu
 
 @available(iOS 11.0, *)
 class ViewController: UIViewController, MKMapViewDelegate, SceneLocationViewDelegate {
-    let sceneLocationView = SceneLocationView()
+
     
+
+    
+    let sceneLocationView = SceneLocationView()
+
     // add a button
-    let button = UIButton(frame: CGRect(x:250, y:50, width:100, height:50))
+    let button = UIButton(frame: CGRect(x:250, y:50, width:120, height:50))
+  
     
     let mapView = MKMapView()
     var userAnnotation: MKPointAnnotation?
@@ -27,7 +33,7 @@ class ViewController: UIViewController, MKMapViewDelegate, SceneLocationViewDele
     
     ///Whether to show a map view
     ///The initial value is respected
-    var showMapView: Bool = true
+    var showMapView: Bool = false
     
     var centerMapOnUserLocation: Bool = true
     
@@ -44,6 +50,7 @@ class ViewController: UIViewController, MKMapViewDelegate, SceneLocationViewDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         infoLabel.font = UIFont.systemFont(ofSize: 10)
         infoLabel.textAlignment = .left
@@ -105,9 +112,11 @@ class ViewController: UIViewController, MKMapViewDelegate, SceneLocationViewDele
         }
         
         // setup button
-        button.backgroundColor = UIColor(red: 0.4, green: 1.0, blue: 0.2, alpha: 0.5)
+        button.backgroundColor = UIColor(red: 0.4, green: 0.2, blue: 1.0, alpha: 0.5)
         button.setTitle("filter",for: .normal)
         button.addTarget(self, action:#selector(buttonAction(sender:)), for: .touchUpInside)
+        button.layer.cornerRadius = 4
+        
         
         
         view.addSubview(sceneLocationView)
@@ -133,29 +142,14 @@ class ViewController: UIViewController, MKMapViewDelegate, SceneLocationViewDele
     
     @objc func buttonAction(sender: UIButton!) {
         print("Button tapped")
-        
+        button.pulsate()
         let myActionSheet = UIAlertController(title: "Filter type", message: "What select a type", preferredStyle: UIAlertControllerStyle.actionSheet)
-        
-//        // blue action button
-//        let blueAction = UIAlertAction(title: "Foods", style: UIAlertActionStyle.default) { (action) in
-//            print("Blue action button tapped")
-//            self.button.setTitle("Foods",for: .normal)
-//        }
-//
-//        // red action button
-//        let redAction = UIAlertAction(title: "Restrooms", style: UIAlertActionStyle.default) { (action) in
-//            print("Red action button tapped")
-//            self.button.setTitle("Restrooms",for: .normal)
-//        }
-//
-//        // yellow action button
-//        let yellowAction = UIAlertAction(title: "Education", style: UIAlertActionStyle.default) { (action) in
-//            print("Yellow action button tapped")
-//            self.button.setTitle("Education",for: .normal)
+
 //        }
         var buttonActions = [UIAlertAction]()
         for title in sceneLocationView.getDicKeys(){
             let action = UIAlertAction(title: title, style: UIAlertActionStyle.default) { (action) in
+                  sender.pulsate()
                 // switch the list
                 self.sceneLocationView.changeNodes(keys: [title])
                 self.button.setTitle(title,for: .normal)
