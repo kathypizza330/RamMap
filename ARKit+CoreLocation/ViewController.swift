@@ -111,8 +111,8 @@ class ViewController: UIViewController, MKMapViewDelegate, SceneLocationViewDele
         }
         
         // setup button
-        button.backgroundColor = UIColor(red: 0.4, green: 0.2, blue: 1.0, alpha: 0.5)
-        button.setTitle("filter",for: .normal)
+        button.backgroundColor = UIColor(red: 192/255.0, green: 192/255.0, blue: 192/255.0, alpha: 0.5)
+        button.setTitle("Filter",for: .normal)
         button.addTarget(self, action:#selector(buttonAction(sender:)), for: .touchUpInside)
         button.layer.cornerRadius = 4
         
@@ -142,7 +142,7 @@ class ViewController: UIViewController, MKMapViewDelegate, SceneLocationViewDele
     @objc func buttonAction(sender: UIButton!) {
         print("Button tapped")
         button.pulsate()
-        let myActionSheet = UIAlertController(title: "Filter type", message: "What select a type", preferredStyle: UIAlertControllerStyle.actionSheet)
+        let myActionSheet = UIAlertController(title: "Filter type", message: "Select a type", preferredStyle: UIAlertControllerStyle.actionSheet)
 
 //        }
         var buttonActions = [UIAlertAction]()
