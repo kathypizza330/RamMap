@@ -477,7 +477,7 @@ public class SceneLocationView: ARSCNView, ARSCNViewDelegate {
                 }
 
                 annotationNode.annotationNode.scale = SCNVector3(x: scale, y: scale, z: scale)
-                let textScale = (distance)/150
+                let textScale = (distance)/300
                 annotationNode.textNode.scale = SCNVector3(x: Float(textScale), y: Float(textScale), z: Float(textScale))
             }
             if distance > 100{
