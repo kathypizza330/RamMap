@@ -67,19 +67,19 @@ open class LocationAnnotationNode: LocationNode {
     ///Setting to true causes annotation nodes to scale like a regular node
     ///Scaling relative to distance may be useful with local navigation-based uses
     ///For landmarks in the distance, the default is correct
-    public var scaleRelativeToDistance = false
+    public var scaleRelativeToDistance = true
     
     public init(location: CLLocation?, image: UIImage, name: String) {
         self.image = image
         // adjust the size of image
-        let plane = SCNPlane(width: image.size.width / 450, height: image.size.height / 450)
+        let plane = SCNPlane(width: image.size.width / 900, height: image.size.height / 900)
         plane.firstMaterial!.diffuse.contents = image
         plane.firstMaterial!.lightingModel = .constant
         
         annotationNode = SCNNode()
         textNode = SCNNode()
         textNode.geometry = SCNText(string: " " + name, extrusionDepth:0.0)
-        textNode.name = "text"
+        textNode.name = name
         
         // adjust the size of text
         textNode.scale = SCNVector3(0.08, 0.08, 0)

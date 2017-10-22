@@ -3,10 +3,12 @@ PODS:
   - CocoaLumberjack/Swift (3.3.0):
     - CocoaLumberjack/Default
   - SwiftyJSON (3.1.4)
+  - YNDropDownMenu (3.0.0)
 
 DEPENDENCIES:
   - CocoaLumberjack/Swift (from `https://github.com/CocoaLumberjack/CocoaLumberjack`, branch `master`)
   - SwiftyJSON
+  - YNDropDownMenu
 
 EXTERNAL SOURCES:
   CocoaLumberjack:
@@ -21,7 +23,8 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   CocoaLumberjack: eadb54b41bba07d02c55a0bc634297328c7257ba
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  YNDropDownMenu: 31a3cb769b560d7f45aa13dd8946fd23683b3b36
 
-PODFILE CHECKSUM: 6d8305c52b5af7fe2266a47e70dd54310b3b1492
+PODFILE CHECKSUM: 1f6d8ae9ba1fef4c7f568d76061d071525c0e958
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.3.1
