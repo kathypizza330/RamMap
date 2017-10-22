@@ -79,7 +79,7 @@ open class LocationAnnotationNode: LocationNode {
         annotationNode = SCNNode()
         textNode = SCNNode()
         textNode.geometry = SCNText(string: " " + name, extrusionDepth:0.0)
-        textNode.name = "text"
+        textNode.name = name
         
         // adjust the size of text
         textNode.scale = SCNVector3(0.08, 0.08, 0)

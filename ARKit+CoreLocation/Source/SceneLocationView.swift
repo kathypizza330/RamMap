@@ -462,6 +462,7 @@ public class SceneLocationView: ARSCNView, ARSCNViewDelegate {
 
             if annotationNode.scaleRelativeToDistance {
                 scale = appliedScale.y
+                annotationNode.textNode.geometry = SCNText(string: annotationNode.textNode.name! + " " + String(distance), extrusionDepth:0.0)
                 let textScale = Float((distance)/250)
                 annotationNode.annotationNode.scale = SCNVector3(x: appliedScale.x * 10, y: appliedScale.y * 10, z: appliedScale.z * 10)
                 
@@ -480,12 +481,15 @@ public class SceneLocationView: ARSCNView, ARSCNViewDelegate {
                 let textScale = (distance)/300
                 annotationNode.textNode.scale = SCNVector3(x: Float(textScale), y: Float(textScale), z: Float(textScale))
             }
-            if distance > 100{
-                annotationNode.annotationNode.opacity = 0.7
-                annotationNode.textNode.opacity = 0.7
-            } else if (distance > 200){
+            if (distance > 200){
                 annotationNode.annotationNode.opacity = 0.0
                 annotationNode.textNode.opacity = 0.0
+            } else if (distance > 150){
+                annotationNode.annotationNode.opacity = 0.6
+                annotationNode.textNode.opacity = 0.4
+            } else if distance > 100{
+                annotationNode.annotationNode.opacity = 0.9
+                annotationNode.textNode.opacity = 0.7
             }
             annotationNode.pivot = SCNMatrix4MakeTranslation(0, -1.1 * scale, 0)
         }
