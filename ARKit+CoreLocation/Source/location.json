@@ -2,77 +2,89 @@
   "Building":[
     {
       "name": "Lory Student Center",
-      "latitude": 40.574753,
-      "longitude": -105.084686,
-      "altitude":1526
+      "latitude": 40.57440068,
+      "longitude": -105.0848126,
+      "altitude":1535
     },
     {
       "name": "Clark A",
-      "latitude": 40.573287,
-      "longitude": -105.083235,
-      "altitude":1526
+      "latitude": 40.57325827,
+      "longitude": -105.0832595,
+      "altitude":1540
     },
     {
       "name": "Morgan Library",
-      "latitude": 40.572945,
-      "longitude": -105.084437,
-      "altitude":1526
+      "latitude": 40.57309661,
+      "longitude": -105.0844354,
+      "altitude":1543
+    },
+    {
+      "name": "Computer Science",
+      "latitude": 40.57415382,
+      "longitude": -105.0832889,
+      "altitude":1542
     },
     {
       "name": "Plant Science",
-      "latitude": 40.573116,
-      "longitude": -105.082280,
-      "altitude":1526
+      "latitude": 40.57332456,
+      "longitude": -105.0821427,
+      "altitude":1532
     },
     {
       "name": "Animal Science",
-      "latitude": 40.572203,
-      "longitude": -105.082023,
-      "altitude":1526
+      "latitude": 40.57224599,
+      "longitude": -105.082163,
+      "altitude":1537
     },
     {
       "name": "Behavior Science Building",
-      "latitude": 40.571502,
-      "longitude": -105.083289,
-      "altitude":1526
+      "latitude": 40.57143715,
+      "longitude": -105.0831101,
+      "altitude":1547
     },
     {
       "name": "Eddy Hall",
-      "latitude": 40.572154,
-      "longitude": -105.084029,
-      "altitude":1526
+      "latitude": 40.57214365,
+      "longitude": -105.0843136,
+      "altitude":1536
     },
     {
       "name": "Education Building",
-      "latitude": 40.571502,
-      "longitude": -105.084222,
-      "altitude":1526
+      "latitude": 40.57127874,
+      "longitude": -105.0842688,
+      "altitude":1534
     },
-    {
-      "name": "Braiden Hall",
-      "latitude": 40.571665,
-      "longitude": -105.085574,
-      "altitude":1526
-    },
+
     {
       "name": "Chemistry",
-      "latitude": 40.570154,
-      "longitude": -105.084203,
-      "altitude":1526
+      "latitude": 40.56995824,
+      "longitude": -105.0844263,
+      "altitude":1538
     },
   ],
-  "food":[
+  "Food":[
     {
       "name": "Morgan Grind",
-      "latitude": 40.572945,
-      "longitude": -105.084437,
+      "latitude": 40.57309661,
+      "longitude": -105.0844354,
       "altitude":1526
     },
     {
       "name": "Lory Student Center Food Court",
-      "latitude": 40.574753,
-      "longitude": -105.084686,
+      "latitude": 40.57440068,
+      "longitude": -105.0848126,
       "altitude":1526
     },
+  ],
+  "Resident Hall":[
+    {
+      "name": "Braiden Hall",
+      "latitude": 40.57164278,
+      "longitude": -105.0856677,
+      "altitude":1530
+    },
   ]
+
+
+
 }
